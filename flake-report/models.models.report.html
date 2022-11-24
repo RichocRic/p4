@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: models/models.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="models.models.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               models/models.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  72
+               </span>
+               <strong>E501:</strong> line too long (90 > 79 characters)
+               
+                  (and 33 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l71">
+                  <tt><i>71</i>         <span class="n">info_joueur</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Identifiant du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">joueur_id</span><span class="p">,</span> <span class="s2">&quot;Nom du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l72">
+                  <tt><i>72</i>                        <span class="s2">&quot;Prénom du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">prenom</span><span class="p">,</span> <span class="s2">&quot;Âge du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_naissance</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (114 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l73">
+                  <tt><i>73</i>                        <span class="s2">&quot;Sexe du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sexe</span><span class="p">,</span> <span class="s2">&quot;Classement du joueur&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">classement</span><span class="p">,</span> <span class="s2">&quot;Score du joueur&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (119 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l133">
+                  <tt><i>133</i>         <span class="n">info_tournoi</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id du tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tournois_id</span><span class="p">,</span> <span class="s2">&quot;nom du tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="p">,</span> <span class="s2">&quot;lieu du tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">lieu</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l134">
+                  <tt><i>134</i>                         <span class="s2">&quot;date du tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;nombre de tour&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">nbr_tour</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l135">
+                  <tt><i>135</i>                         <span class="s2">&quot;contrôle de temps&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ctrl_temps</span><span class="p">,</span> <span class="s2">&quot;id des joueurs&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">joueur_id</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (116 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l136">
+                  <tt><i>136</i>                         <span class="s2">&quot;nombre de participants&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">participants</span><span class="p">,</span> <span class="s2">&quot;la description du tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">}</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (107 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l166">
+                  <tt><i>166</i>         <span class="n">tournois_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;id des joueurs&#39;</span><span class="p">:</span> <span class="n">id_joueurs</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;id du tournois&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l172">
+                  <tt><i>172</i>         <span class="n">tournois_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;id des joueurs&#39;</span><span class="p">:</span> <span class="n">joueursid</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;id du tournois&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">tournoisid</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l180">
+                  <tt><i>180</i>         <span class="n">result</span> <span class="o">=</span> <span class="n">tournois_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="s1">&#39;id du tournois&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l184">
+                  <tt><i>184</i>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LES ID DES JOUEURS POUR CE TOURNOIS DEPUIS LA TABLE SONT: ==&gt;&quot;</span><span class="p">,</span> <span class="n">nresult</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l197">
+                  <tt><i>197</i>             <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">doc_ids</span><span class="p">[</span><span class="n">count</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l205">
+                  <tt><i>205</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lstparticipantss</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l207">
+                  <tt><i>207</i>             <span class="c1"># clssmnt = sorted(lstparticipantss, key=lambda x: x[3], reverse=True)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l208">
+                  <tt><i>208</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lstparticipantss</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l211">
+                  <tt><i>211</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">lstparticipantss</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l228">
+                  <tt><i>228</i>         <span class="sd">&quot;&quot;&quot;Récupérer les informationstournois pour la création des tours et matchs.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l230">
+                  <tt><i>230</i>         <span class="n">resultat</span> <span class="o">=</span> <span class="n">tournois_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;id du tournois&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l247">
+                  <tt><i>247</i>         <span class="n">tour</span> <span class="o">=</span> <span class="n">Tour</span><span class="p">(</span><span class="s2">&quot;Round&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nbrtoure</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">lstmatch</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (94 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l251">
+                  <tt><i>251</i>     <span class="k">def</span> <span class="nf">creermatch</span><span class="p">(</span><span class="n">resultattwo</span><span class="p">,</span> <span class="n">resultatone</span><span class="p">,</span> <span class="n">joueurone</span><span class="p">,</span> <span class="n">joueurtwo</span><span class="p">,</span> <span class="n">id_trs</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l253">
+                  <tt><i>253</i>         <span class="n">m1</span> <span class="o">=</span> <span class="n">Match</span><span class="p">(</span><span class="n">resultattwo</span><span class="p">,</span> <span class="n">resultatone</span><span class="p">,</span> <span class="n">joueurone</span><span class="p">,</span> <span class="n">joueurtwo</span><span class="p">,</span> <span class="n">id_trs</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (89 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l338">
+                  <tt><i>338</i>             <span class="n">tour_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;date de fin&#39;</span><span class="p">:</span> <span class="n">ddfin</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;id du tour&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">trs_encours</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l341">
+                  <tt><i>341</i>             <span class="n">tour_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;heure de fin&#39;</span><span class="p">:</span> <span class="n">hdfin</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;id du tour&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">trs_encours</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (113 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l360">
+                  <tt><i>360</i>             <span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;resultat</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;saisir le résultat du match</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2"> pour le joueur N°1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l365">
+                  <tt><i>365</i>                 <span class="n">resultat</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l367">
+                  <tt><i>367</i>                 <span class="n">bddscore</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultat</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l368">
+                  <tt><i>368</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscore</span> <span class="o">+</span> <span class="mi">1</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l370">
+                  <tt><i>370</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1 au joueur1 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (92 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l375">
+                  <tt><i>375</i>                 <span class="n">resultatp</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l377">
+                  <tt><i>377</i>                 <span class="n">bddscorep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatp</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatp</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatp</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (116 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l378">
+                  <tt><i>378</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscorep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l380">
+                  <tt><i>380</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1 au joueur2 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (92 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l385">
+                  <tt><i>385</i>                 <span class="n">resultatn</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l387">
+                  <tt><i>387</i>                 <span class="n">bddscoren</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatn</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (118 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l388">
+                  <tt><i>388</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscoren</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l389">
+                  <tt><i>389</i>                 <span class="n">resultatnn</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l391">
+                  <tt><i>391</i>                 <span class="n">bddscorenn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (119 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l392">
+                  <tt><i>392</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscorenn</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (85 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l393">
+                  <tt><i>393</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1/2 au joueur2 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (85 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l394">
+                  <tt><i>394</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1/2 au joueur1 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l473">
+                  <tt><i>473</i>         <span class="n">liste_anciens_matchs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;id du joueur1&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;id du joueur2&#39;</span><span class="p">]],</span> <span class="n">result</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l478">
+                  <tt><i>478</i>             <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">element</span><span class="p">[</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">liste_joueurs</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l479">
+                  <tt><i>479</i>         <span class="n">liste_joueurs</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;Classement du joueur&quot;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (86 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l481">
+                  <tt><i>481</i>         <span class="n">liste_joueurs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;Identifiant du joueur&quot;</span><span class="p">],</span> <span class="n">liste_joueurs</span><span class="p">))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l497">
+                  <tt><i>497</i>                 <span class="k">if</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l532">
+                  <tt><i>532</i>                                     <span class="k">if</span> <span class="n">check_player_exist</span><span class="p">(</span><span class="n">list2</span><span class="p">,</span> <span class="n">list_combe</span><span class="p">[</span><span class="n">lam</span><span class="p">]):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (94 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l542">
+                  <tt><i>542</i>             <span class="n">lstcombi</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="n">liste_joueurs</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">liste_joueurs</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]],</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (109 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l547">
+                  <tt><i>547</i> <span class="sd">Chaque tour est une liste de matchs. Chaque match consiste en une paire de joueurs avec un champ de résultats</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l549">
+                  <tt><i>549</i> <span class="sd">Lorsqu&#39;un tour est terminé, le gestionnaire du tournoi saisit les résultats de chaque match avant de générer</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (119 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l551">
+                  <tt><i>551</i> <span class="sd">Le gagnant reçoit 1 point, le perdant 0 point. Si un match se termine par un match nul, chaque joueur reçoit 1/2 point.</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l552">
+                  <tt><i>552</i> <span class="sd">En plus de la liste des correspondances, chaque instance du tour doit contenir un champ de nom.</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (94 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l554">
+                  <tt><i>554</i> <span class="sd">Elle doit également contenir un champ Date et heure de début et un champ Date et heure de fin,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (113 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l555">
+                  <tt><i>555</i> <span class="sd">qui doivent tous deux être automatiquement remplis lorsque l&#39;utilisateur crée un tour et le marque comme terminé.</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (117 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l556">
+                  <tt><i>556</i> <span class="sd">Les instances de round doivent être stockées dans une liste sur l&#39;instance de tournoi à laquelle elles appartiennent.</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l580">
+                  <tt><i>580</i>         <span class="n">info_match</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id du match&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">match_id</span><span class="p">,</span> <span class="s2">&quot;resultat du match Joueur 1&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">resultatjone</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l581">
+                  <tt><i>581</i>                       <span class="s2">&quot;resultat du match Joueur 2&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">resultatjtwo</span><span class="p">,</span> <span class="s2">&quot;id du joueur1&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">joueurone_id</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l582">
+                  <tt><i>582</i>                       <span class="s2">&quot;id du joueur2&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">joueurtwo_id</span><span class="p">,</span> <span class="s2">&quot;id tour&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tour_id</span><span class="p">,</span> <span class="s2">&quot;id tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tournois_id</span><span class="p">}</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l595">
+                  <tt><i>595</i>         <span class="k">return</span> <span class="n">Match</span><span class="p">(</span><span class="n">match_id</span><span class="p">,</span> <span class="n">joueurone_id</span><span class="p">,</span> <span class="n">resultatjone</span><span class="p">,</span> <span class="n">joueurtwo_id</span><span class="p">,</span> <span class="n">resultatjtwo</span><span class="p">,</span> <span class="n">id_tour</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l606">
+                  <tt><i>606</i>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_fin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">heure_fin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">id_tournoiss</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lstmatchs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (106 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l619">
+                  <tt><i>619</i>         <span class="n">info_tour</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id du tour&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">tour_id</span><span class="p">,</span> <span class="s2">&quot;nom du tour&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">round</span><span class="p">,</span> <span class="s2">&quot;date de début&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">d_debut</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (107 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l620">
+                  <tt><i>620</i>                      <span class="s2">&quot;heure de début&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">h_debut</span><span class="p">,</span> <span class="s2">&quot;date de fin&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">d_fin</span><span class="p">,</span> <span class="s2">&quot;heure de fin&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">h_fin</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l621">
+                  <tt><i>621</i>                      <span class="s2">&quot;id tournois&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id_tournois</span><span class="p">,</span> <span class="s2">&quot;liste des matches&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstmatchs</span><span class="p">}</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l653">
+                  <tt><i>653</i>         <span class="n">db</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;tournois&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;participants du tournois&#39;</span><span class="p">:</span> <span class="n">listparticipant</span><span class="p">},</span> <span class="n">doc_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l658">
+                  <tt><i>658</i>     <span class="sd">&quot;&quot;&quot;t1 = Tour(Nom=&#39;touré1&#39;, Date_debut=&#39;12/11/2022&#39;, heure_debut=&#39;11:29&#39;, Date_fin=&#39;12/12/2022&#39;,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (111 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l659">
+                  <tt><i>659</i> <span class="sd">    heure_fin=&#39;19:29&#39;, id_tournois=1) print(t1.get_ids_joueurs()) t1.maj() j1 = Joueur(&quot;Narb&quot;,&quot;yomé&quot;,56,&quot;F&quot;,45,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (96 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l661">
+                  <tt><i>661</i>     <span class="n">trns</span> <span class="o">=</span> <span class="n">Tournoi</span><span class="p">(</span><span class="n">participants</span><span class="o">=</span><span class="s2">&quot;jean, michel&quot;</span><span class="p">,</span> <span class="n">nom_tournois</span><span class="o">=</span><span class="s2">&quot;Bordeau&quot;</span><span class="p">,</span> <span class="n">lieu_tournois</span><span class="o">=</span><span class="s2">&quot;Bordeau&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (98 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l662">
+                  <tt><i>662</i>                    <span class="n">date_tournois</span><span class="o">=</span><span class="s2">&quot;20/12/2024&quot;</span><span class="p">,</span> <span class="n">nbr_tour</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">joueur_id</span><span class="o">=</span><span class="s2">&quot;45,57&quot;</span><span class="p">,</span> <span class="n">ctrl_temps</span><span class="o">=</span><span class="s2">&quot;bullet&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (101 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l676">
+                  <tt><i>676</i>     <span class="c1"># trns.loaderTournois()#ok trns.razScore() print(trns.lstidtournois(tour_table)) trns.search()#ok</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l677">
+                  <tt><i>677</i>     <span class="c1"># trns.recupIdJoueurs(&#39;05460aa6-020e-11ed-a3b3-acde48001122&#39;) trns.rapportTournois() print(</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (94 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l678">
+                  <tt><i>678</i>     <span class="c1"># trns.recupInfoTournois()) tournois_table = db.table(&#39;tournois&#39;) t1 = Tour(&quot;tour1&quot;,&quot;&quot;,&quot;&quot;,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (88 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l679">
+                  <tt><i>679</i>     <span class="c1"># &quot;05460aa6-020e-11ed-a3b3-acde48001122&quot;) t1.inserer_bdd(&#39;tour&#39;) m1 = Match(&quot;P&quot;,&quot;G&quot;,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="models.models.source.html#l681">
+                  <tt><i>681</i>     <span class="c1"># &quot;941d472c-05e6-11ed-a7ce-acde48001122&quot;,&quot;05460aa6-020e-11ed-a3b3-acde48001122&quot;) m1.inserer_bdd(&#39;match&#39;)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="D401">
+               <span class="count sev-3">
+                  4
+               </span>
+               <strong>D401:</strong> First line should be in imperative mood
+               
+                  (and 1 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>First line should be in imperative mood:</p>
+               
+               <a href="models.models.source.html#l132">
+                  <tt><i>132</i>         <span class="sd">&quot;&quot;&quot;Serialisation.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>First line should be in imperative mood:</p>
+               
+               <a href="models.models.source.html#l579">
+                  <tt><i>579</i>         <span class="sd">&quot;&quot;&quot;Serialiser le match.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>First line should be in imperative mood; try rephrasing:</p>
+               
+               <a href="models.models.source.html#l587">
+                  <tt><i>587</i>         <span class="sd">&quot;&quot;&quot;String match.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>First line should be in imperative mood:</p>
+               
+               <a href="models.models.source.html#l618">
+                  <tt><i>618</i>         <span class="sd">&quot;&quot;&quot;Serialiser le tour.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="N803">
+               <span class="count sev-3">
+                  2
+               </span>
+               <strong>N803:</strong> argument name 'IDTOURNOISENCOURS' should be lowercase
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="models.models.source.html#l245">
+                  <tt><i>245</i>     <span class="k">def</span> <span class="nf">creertour</span><span class="p">(</span><span class="n">nbrtoure</span><span class="p">,</span> <span class="n">lstmatch</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <a href="models.models.source.html#l251">
+                  <tt><i>251</i>     <span class="k">def</span> <span class="nf">creermatch</span><span class="p">(</span><span class="n">resultattwo</span><span class="p">,</span> <span class="n">resultatone</span><span class="p">,</span> <span class="n">joueurone</span><span class="p">,</span> <span class="n">joueurtwo</span><span class="p">,</span> <span class="n">id_trs</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>

@@ -1,15 +1,30 @@
 """Models."""
 import itertools
+import os
 import random
 import uuid
 from datetime import date, datetime
 from tinydb import TinyDB, where, Query
 
-db = TinyDB('bdd/database.json')
-joueurs_table = db.table('joueurs')
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+
+jdb = TinyDB('../joueurs.json')
+db = TinyDB('../database.json')
+sdb = TinyDB('../savedb.json')
+
+# jdb = TinyDB('../bdd/joueurs.json')
+# db = TinyDB('../bdd/database.json')
+# sdb = TinyDB('../bdd/savedb.json')
+joueurs_table = jdb.table('joueurs')
 tournois_table = db.table('tournois')
 match_table = db.table('match')
 tour_table = db.table('tour')
+
+sdbjoueurs_table = sdb.table('sdbjoueurs')
+sdbtournois_table = sdb.table('sdbtournois')
+sdbmatch_table = sdb.table('sdbmatch')
+sdbtour_table = sdb.table('sdbtour')
 today = date.today()
 confirm_msg = ['INSERTION TERMINEE', 'CREATION TERMINEE']
 IDTOURNOISENCOURS = " "
@@ -42,29 +57,14 @@ class Joueur:
         self.sexe = genre
         self.classement = rang
         self.score = score
-        """Constructeur."""
 
-    def creation_joueur(self):
+    def creation_joueur(self, j):
         """Création du joueur."""
-        self.nom = input("saisir le nom du joueur: ")
-        self.prenom = input("saisir le prénom du joueur: ")
-        self.date_naissance = int(input("saisir la date de naissance du joueur: "))
-        self.sexe = input("saisir le genre du joueur: ")
-        self.classement = int(input("saisir le rang du joueur: "))
-
-    @staticmethod
-    def creation_joueurs():
-        """Création dynamique de 8 joueurs comme demandé."""
-        joueur = []
-        nbrjoueur = int(input('Sasir, le Nombre de joueur(s) à inserrer '))
-        for i in range(nbrjoueur):
-            print('=========================')
-            print('Instance Joueur N°:', [i])
-            print('=========================\n')
-            joueur.append(Joueur())
-            joueur[i] = Joueur()
-            joueur[i].creation_joueur()
-            joueur[i].inserer_bdd('joueurs')
+        self.nom = j[0]
+        self.prenom = j[1]
+        self.date_naissance = j[2]
+        self.sexe = j[3]
+        self.classement = j[4]
 
     def serialiser(self):
         """Json2 variable."""
@@ -76,71 +76,12 @@ class Joueur:
     @staticmethod
     def message(msg):
         """Custo MSG."""
-        print('========================='+msg+'=========================')
+        print('=========================' + msg + '=========================')
 
     def inserer_bdd(self, nomtable):
         """Insert into DB."""
-        db.table(nomtable).insert(self.serialiser())
+        jdb.table(nomtable).insert(self.serialiser())
         Joueur.message(confirm_msg[0])
-
-    def __repr__(self):
-        """Players representation."""
-        gab = "Joueur (\nid:  '%s', \n" + \
-              "Nom:  '%s', \n" + \
-              "Prenom:  '%s', \n" + \
-              "Âge:  '%s', \n" + \
-              "Sexe:  '%s', \n" + \
-              "Classement:  '%s', \n" + \
-              "Score:  '%s')"
-        return gab % (self.joueur_id,
-                      self.nom,
-                      self.prenom,
-                      self.date_naissance,
-                      self.sexe,
-                      self.classement,
-                      self.score)
-
-    @staticmethod
-    def rapportjoueurs():
-        """Rapport Global."""
-        Joueur.message("==================================RAPPORT JOUEURS==================================")
-        print()
-        print("Nom du joueur: ".ljust(10), "Prénom du joueur: ".ljust(10), "Âge du joueur: ".ljust(10),
-              "Sexe du joueur: ".ljust(10), "Classement du joueur: ".ljust(10),
-              "Score du joueur: ", )
-        print()
-        for entry in joueurs_table.all():
-            # "Identifiant du joueur: ", entry["Identifiant du joueur"]+"| |"
-            print(
-                entry["Nom du joueur"].ljust(17),
-                entry["Prénom du joueur"].ljust(17),
-                str(entry["Âge du joueur"]).ljust(17),
-                entry["Sexe du joueur"].ljust(17),
-                str(entry["Classement du joueur"]).ljust(20),
-                str(entry["Score du joueur"]).ljust(25)
-            )
-
-    @staticmethod
-    def rapportdunjoueur():
-        """Rapport joueur."""
-        Joueur.message("RAPPORT PAR JOUEUR")
-        print()
-        recherchenom = input("saisir le nom du joueur recherché: ").lower()
-        resultat = joueurs_table.search(where('Nom du joueur') == recherchenom)
-        if not resultat:
-            Joueur.message("Aucun joueur de ce nom")
-        else:
-            for entry in resultat:
-                print(
-                    "Nom du joueur: ",
-                    entry["Nom du joueur"] + "| |"
-                                             "Prénom du joueur: ", entry["Prénom du joueur"] + "| |"
-                                                                                               "Âge du joueur: ",
-                    entry["Âge du joueur"], "| |"
-                                            "Sexe du joueur: ", entry["Sexe du joueur"] + "| |"
-                                                                                          "Classement du joueur: ",
-                    entry["Classement du joueur"], "| |"
-                                                   "Score du joueur: ", entry["Score du joueur"], "| |")
 
     @staticmethod
     def deserialiser(joueur_serialiser):
@@ -151,43 +92,7 @@ class Joueur:
         date_naissance = joueur_serialiser["Âge du joueur"]
         sexe = joueur_serialiser["Sexe du joueur"]
         classement = joueur_serialiser["Classement du joueur"]
-        # score = joueur_serialiser["Score du joueur"]
         return Joueur(joueur_id, nom, prenom, date_naissance, sexe, classement)
-
-    @staticmethod
-    def triejoueur(valeur):
-        """TrierDesJoueurs."""
-        doc_ids = []
-        for entry in joueurs_table.all():
-            doc_ids.append([entry['Identifiant du joueur'],
-                            entry['Nom du joueur'],
-                            entry['Prénom du joueur'],
-                            entry['Âge du joueur'],
-                            entry['Sexe du joueur'],
-                            entry['Classement du joueur'],
-                            entry['Score du joueur']
-                            ])
-        if valeur == "c":
-            clssmnt = sorted(joueurs_table.all(), key=lambda x: x['Classement du joueur'], reverse=True)
-        elif valeur == "s":
-            clssmnt = sorted(joueurs_table.all(), key=lambda x: x['Score du joueur'], reverse=True)
-            print('Nom du joueur | |', 'Prénom du joueur | |', 'Âge du joueur | |', 'Sexe du joueur | |', 'Classement '
-                                                                                                          'du joueur '
-                                                                                                          '| |',
-                  'Score du joueur | |')
-            for entry in clssmnt:
-                print(
-                    entry["Nom du joueur"].ljust(17),
-                    entry["Prénom du joueur"].ljust(20),
-                    str(entry["Âge du joueur"]).ljust(20),
-                    entry["Sexe du joueur"].ljust(20),
-                    str(entry["Classement du joueur"]).ljust(20),
-                    str(entry["Score du joueur"]).ljust(20),
-                )
-        else:
-            print('demande non comprise')
-            clssmnt = sorted(joueurs_table.all(), key=lambda x: x['Identifiant du joueur'], reverse=True)
-        return clssmnt
 
 
 class Tournoi:
@@ -207,26 +112,21 @@ class Tournoi:
         self.lieu = lieu_tournois
         self.date = date_tournois
         self.nbr_tour = nbr_tour
-        self.joueur_id = joueur_id
         self.ctrl_temps = ctrl_temps
-        self.description = description_tournois
-        self.list2tour = []
+        self.joueur_id = joueur_id
         self.participants = participants
+        self.description = description_tournois
+        # self.list2tour = []
 
-    @staticmethod
-    def message(msg):
-        """Custo msg."""
-        print('========================='+msg+'=========================')
-
-    def creation_tournoi(self):
+    def creation_tournoi(self, t):
         """Summary_Création du tournois."""
-        self.nom = input("saisir le nom du tournois: ")
-        self.lieu = input("saisir le lieu du tournois: ")
-        self.date = input("saisir la date du tournois: ")
-        self.nbr_tour = int(input("saisir le nombre de tour si différent de 4: "))
-        self.participants = int(input("saisir le nombre(paire) de joueurs: "))
-        self.ctrl_temps = input("Renseigner le contrôle de temps(bullet/blitz/coup rapide): ")
-        self.description = input("saisir la description du tournois: ")
+        self.nom = t[0]
+        self.lieu = t[1]
+        self.date = t[2]
+        self.nbr_tour = t[3]
+        self.participants = t[4]
+        self.ctrl_temps = t[5]
+        self.description = t[6]
 
     def serialiser_tournoi(self):
         """Serialisation."""
@@ -236,29 +136,10 @@ class Tournoi:
                         "nombre de participants": self.participants, "la description du tournois": self.description}
         return info_tournoi
 
-    @staticmethod
-    def rapporttournois():
-        """Rapport des tournois."""
-        Tournoi.message("=========RAPPORT TOURNOIS=========")
-        print()
-        print("Nom du tournois: ", "Lieu du tournois: ", "Date du tournois: ", "Id des joueurs: ", "Nombre de tour: ",
-              "Contrôle de temps: ", "Description du tournois: ")
-        print()
-        for entry in tournois_table.all():
-            print(
-                entry["nom du tournois"].ljust(17),
-                entry["lieu du tournois"].ljust(17),
-                entry["date du tournois"].ljust(20),
-                str(entry["id des joueurs"]).ljust(17),
-                str(entry["nombre de tour"]).ljust(17),
-                entry["contrôle de temps"].ljust(17),
-                entry["la description du tournois"].ljust(17)
-            )
-
     def inserer_bdd(self, nomtable):
         """Insert into DB."""
         db.table(nomtable).insert(self.serialiser_tournoi())
-        Tournoi.message(confirm_msg[0])
+        Joueur.message(confirm_msg[0])
 
     @staticmethod
     def participantss(nbr_joueurs):
@@ -286,8 +167,14 @@ class Tournoi:
         return listparticipant
 
     @staticmethod
+    def inscriptionparticipants(joueursid, tournoisid):
+        """Inscription des joueurs dans tournois."""
+        tournois_table.update({'id des joueurs': joueursid}, where('id du tournois') == tournoisid)
+
+    @staticmethod
     def recupidjoueurs():
         """RECUPERER LES ID JOUEURS DEPUIS LA TABLE TOURNOIS EN COURS."""
+        Tournoi.participantss(8)
         element = Query()
         nresult = []
         result = tournois_table.search(element['id du tournois'] == IDTOURNOISENCOURS)
@@ -309,16 +196,6 @@ class Tournoi:
             print(doc_ids[count])
             joueurs_table.update({'Score du joueur': 0}, where('Identifiant du joueur') == doc_ids[count])
 
-    @staticmethod
-    def search():
-        """Rechercher."""
-        element = Query()
-        nresult = []
-        result = tournois_table.search(element['id du tournois'] == IDTOURNOISENCOURS)
-        for entry in result:
-            nresult.append(entry['id des joueurs'])
-        print(nresult)
-
     def recupclassement(self, valeur):
         """Trier par classement, score, ou bien par nom."""
         lstparticipantss = self.participantss(8)
@@ -335,13 +212,25 @@ class Tournoi:
         return clssmnt
 
     @staticmethod
+    def donner_temps(valeur):
+        """Date ou Heure."""
+        temps = str(datetime.now())
+        if valeur == 'j':
+            moment = temps[:11]
+        elif valeur == 'h':
+            moment = temps[11:]
+        else:
+            print('saisie non comprise')
+        return moment
+
+    @staticmethod
     def recupinfotournois():
         """Récupérer les informationstournois pour la création des tours et matchs."""
         global nbrtour, id_tournois, nbr_participants
         resultat = tournois_table.search(where('id du tournois') == IDTOURNOISENCOURS)
         information_tournois = []
         if not resultat:
-            Tournoi.message("Aucun tournois de ce nom")
+            Joueur.message("Aucun tournois de ce nom")
         else:
             for entry in resultat:
                 nbrtour = int(entry["nombre de tour"])
@@ -353,75 +242,16 @@ class Tournoi:
         return information_tournois
 
     @staticmethod
-    def creertour(nbrtoure, lstmatch):
+    def creertour(nbrtoure, lstmatch, IDTOURNOISENCOURS):
         """Creation tour."""
-        tour = Tour("Round" + str(nbrtoure), "", "", IDTOURNOISENCOURS, lstmatch)
+        tour = Tour("Round" + str(nbrtoure), "", "", lstmatch, IDTOURNOISENCOURS)
         tour.inserer_bdd('tour')
 
     @staticmethod
-    def creermatch(resultattwo, resultatone, joueurone, joueurtwo, id_trs):
+    def creermatch(resultattwo, resultatone, joueurone, joueurtwo, id_trs, IDTOURNOISENCOURS):
         """Creation du match."""
         m1 = Match(resultattwo, resultatone, joueurone, joueurtwo, id_trs, IDTOURNOISENCOURS)
         m1.inserer_bdd('match')
-
-    @staticmethod
-    def donner_date():
-        """Date Uniquement."""
-        temps = str(datetime.now())
-        jour = temps[:11]
-        print(jour)
-        return jour
-
-    @staticmethod
-    def donner_heure():
-        """Heure uniquement."""
-        temps = str(datetime.now())
-        heure = temps[11:]
-        print(heure)
-        return heure
-
-    def maj(self, idtour):
-        """MAJ du tournois."""
-        df = self.donner_date()
-        hf = self.donner_heure()
-        print(hf)
-        print(df)
-        tour_table.update({'heure de fin': hf}, where('id du tour') == idtour)
-        tour_table.update({'date de fin': df}, where('id du tour') == idtour)
-
-    def loadertournois(self):
-        """Cherche les tournois avec une date de fin vide."""
-        element = Query()
-        nresult = []
-        result = tour_table.search(element['date de fin'] == "")
-        print()
-        print("                         =========LIST DES TOUR EN COURS POUR CE TOURNOIS=========")
-        print()
-        print("Nom du tour: ", "Date de début du tour: ", "Heure de début du tour: ", "Date "
-                                                                                      "de "
-                                                                                      "fin "
-                                                                                      "du "
-                                                                                      "tour: "
-                                                                                      "",
-              "Heure de fin du tour: ")
-        for entry in result:
-            nresult.append(entry['nom du tour'])
-            print(
-                entry["nom du tour"].ljust(17),
-                entry["date de début"].ljust(17),
-                entry["heure de début"].ljust(17),
-                entry["date de fin"].ljust(17),
-                entry["heure de fin"].ljust(17)
-            )
-        print("TOUR EN COURS POUR CE TOURNOIS: ", len(nresult))
-        afaire = input("CLOTURER ?: (O/N)").lower()
-
-        if afaire == "o":
-            afermer = input("RENSEIGNER L'ID TOUR:")
-            print(afermer)
-            self.maj(afermer)
-        elif afaire == "n":
-            print("Au revoir")
 
     @staticmethod
     def lstidtournois(table):
@@ -429,6 +259,7 @@ class Tournoi:
         doc_ids = []
         for entry in table.all():
             if table == tournois_table:
+
                 doc_ids.append(entry['id du tournois'])
             elif table == tour_table:
                 doc_ids.append(entry['id tournois'])
@@ -503,10 +334,10 @@ class Tournoi:
         trs_encours = self.listidtourcourant()
         response = input("TERMINEE ? (O/N) ").lower()
         if response == "o":
-            ddfin = str(self.donner_date())
+            ddfin = str(Tournoi.donner_temps('j'))
             tour_table.update({'date de fin': ddfin}, where('id du tour') == trs_encours)
             print("DFIN: ", ddfin)
-            hdfin = str(self.donner_heure())
+            hdfin = str(Tournoi.donner_temps('h'))
             tour_table.update({'heure de fin': hdfin}, where('id du tour') == trs_encours)
             print("HFIN: ", hdfin)
             lstm = self.recuplstmatch()
@@ -515,12 +346,9 @@ class Tournoi:
                 print("LISTE RESCUE BRUTE: ", lstm)
                 res = list(map(list, lstm))
                 print("LISTE  RESCUE CONVERTI en LST DE LISTE: ", res)
-                # res = tuple(tuple(sub) for sub in lstm)
             else:
                 res = itertools.chain(*lstm)
-                # print("CONVERSION TUPLE 2 LISTE:", list(res))
                 res = list(res)
-                # res = zip(*[iter(res)] * 2)
                 print("CONVERSION EN LISTE TUPLE 2 :", res)
             self.saisir_match(res, trs_encours)
 
@@ -568,11 +396,6 @@ class Tournoi:
             else:
                 print(['resultat%s' % i])
                 print("saisie non comprise")
-
-    @staticmethod
-    def rotate(lig, nig):
-        """Rotation du groupe 2."""
-        return lig[nig:] + lig[:nig]
 
     @staticmethod
     def diviser(lst):
@@ -645,9 +468,11 @@ class Tournoi:
         """Creation des paires."""
         element = Query()
         result = match_table.search(element['id tournois'] == idtournois)
+        print("résultat Apairage: ", result)
         tour_en_cours = len(result) // 4 + 1
         liste_anciens_matchs = list(map(lambda x: [x['id du joueur1'], x['id du joueur2']], result))
         result = tournois_table.search(element['id du tournois'] == idtournois)
+        print("résultat Apairage 2: ", result)
         liste_joueurs = result[0]['id des joueurs']
         liste_joueurs = list(
             map(lambda x: joueurs_table.search(element['Identifiant du joueur'] == x)[0], liste_joueurs))
@@ -665,8 +490,6 @@ class Tournoi:
                 if [d[i], d[j]] not in d1:
                     d2.append([d[i], d[j], i + j])
         d2.sort(key=lambda x: x[2], reverse=True)
-
-        # list_1 = [d2[0], d2[7]]
 
         def check_player_exist(list_matchs, match):
             """Vérifie si deja ensemble."""
@@ -752,11 +575,6 @@ class Match:
         self.tour_id = tour_id
         self.tournois_id = tournois_id
 
-    @staticmethod
-    def message(msg):
-        """Message customisé."""
-        print('========================='+msg+'=========================')
-
     def serialiser_match(self):
         """Serialiser le match."""
         info_match = {"id du match": self.match_id, "resultat du match Joueur 1": self.resultatjone,
@@ -776,69 +594,25 @@ class Match:
         # tournois_id = match_serialiser["id du tournois"]
         return Match(match_id, joueurone_id, resultatjone, joueurtwo_id, resultatjtwo, id_tour)
 
-    @staticmethod
-    def rapportmatchs():
-        """Informations sur les matchs."""
-        Match.message("RAPPORT SUR LES MATCHS")
-        print()
-        print("Résultat du match du joueur 1:         ", "Id du joueur1:              ", "Résultat du match du joueur "
-                                                                                         "2:            ",
-              "Id du joueur2:               ", "Id du tour:             ")
-        print()
-        for entry in match_table.all():
-            print(entry["resultat du match Joueur 1"].ljust(17),
-                  str(entry["id du joueur1"]).ljust(17),
-                  entry["resultat du match Joueur 2"].ljust(17),
-                  str(entry["id du joueur2"]).ljust(17),
-                  str(entry["id tournois"]).ljust(17)
-                  )
-
     def inserer_bdd(self, nomtable):
         """Insert into DB."""
         db.table(nomtable).insert(self.serialiser_match())
-        Match.message(confirm_msg[0])
+        Joueur.message(confirm_msg[0])
 
 
 class Tour:
     """Creation de la class tour."""
 
-    @staticmethod
-    def horodatage():
-        """Récupération de la date & heure séparement."""
-        temps = str(datetime.now())
-        datage = temps[:11]
-        heure = temps[11:]
-        return datage, heure
-
     def __init__(self, nom=None, date_fin=None, heure_fin=None, id_tournoiss=None, lstmatchs=None):
         """Constructeur."""
         self.tour_id = str(uuid.uuid1())
         self.round = nom
-        self.d_debut = str(self.getjour())
-        self.h_debut = str(self.getheure())
+        self.d_debut = str(Tournoi.donner_temps('j'))
+        self.h_debut = str(Tournoi.donner_temps('h'))
         self.d_fin = date_fin
         self.h_fin = heure_fin
         self.id_tournois = id_tournoiss
         self.lstmatchs = lstmatchs
-
-    @staticmethod
-    def getjour():
-        """Récupération de la date séparement."""
-        temps = str(datetime.now())
-        datage = temps[:11]
-        return datage
-
-    @staticmethod
-    def getheure():
-        """Récupération de l'heure séparement."""
-        temps = str(datetime.now())
-        heure = temps[11:]
-        return heure
-
-    @staticmethod
-    def message(msg):
-        """Customisation des messages."""
-        print('=========================' + msg + '=========================')
 
     def serialiser_tour(self):
         """Serialiser le tour."""
@@ -850,11 +624,7 @@ class Tour:
     def inserer_bdd(self, nomtable):
         """Insert into DB."""
         db.table(nomtable).insert(self.serialiser_tour())
-        Tour.message(confirm_msg[0])
-
-    def creertour(self):
-        """Creation de tour."""
-        self.inserer_bdd(tour_table)
+        Joueur.message(confirm_msg[0])
 
     @staticmethod
     def deserialiser_tour(tour_serialiser):
@@ -882,25 +652,6 @@ class Tour:
         print("=" * 15)
         db.table('tournois').update({'participants du tournois': listparticipant}, doc_ids=[1])
         return doc_ids
-
-    @staticmethod
-    def rapporttours():
-        """Rapport des tours."""
-        Tour.message("RAPPORT SUR LES TOURS")
-        print()
-        print("Nom du tour: ", "Date de début: ", "Heure de début: ", "Date de fin: ", "Heure de fin: ", "Id du "
-                                                                                                         "tournois "
-                                                                                                         "associé:")
-        print()
-        for entry in tour_table.all():
-            print(
-                entry["nom du tour"].ljust(17),
-                entry["date de début"].ljust(17),
-                entry["heure de début"].ljust(17),
-                entry["date de fin"].ljust(17),
-                entry["heure de fin"].ljust(17),
-                str(entry["id tournois"]).ljust(17)
-            )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: controlers/kontroler.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-1"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="controlers.kontroler.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               controlers/kontroler.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="F841">
+               <span class="count sev-1">
+                  7
+               </span>
+               <strong>F841:</strong> local variable 'id_tour' is assigned to but never used
+               
+                  (and 6 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Local variable 'id_tour' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l83">
+                  <tt><i>83</i>         <span class="n">id_tour</span> <span class="o">=</span> <span class="n">Maincontroller</span><span class="o">.</span><span class="n">id_tourprendre</span><span class="p">(</span><span class="n">ID_TOURNOI_ENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'round_tour' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l85">
+                  <tt><i>85</i>         <span class="n">round_tour</span> <span class="o">=</span> <span class="n">Maincontroller</span><span class="o">.</span><span class="n">id_tourreprise</span><span class="p">(</span><span class="n">ID_TOURNOI_ENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'jrs' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l87">
+                  <tt><i>87</i>         <span class="n">jrs</span> <span class="o">=</span> <span class="n">Maincontroller</span><span class="o">.</span><span class="n">id_tour_lstjoueurs</span><span class="p">(</span><span class="n">ID_TOURNOI_ENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'case' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l111">
+                  <tt><i>111</i>             <span class="n">case</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ligne&quot;</span><span class="p">:</span> <span class="n">selctionmem</span><span class="p">}</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'tclefm' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l151">
+                  <tt><i>151</i>                 <span class="n">tclefm</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">clefm</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'ID_TOURNOI_ENCOURS' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l199">
+                  <tt><i>199</i>                 <span class="n">ID_TOURNOI_ENCOURS</span> <span class="o">=</span> <span class="n">dico</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Local variable 'lstjoueurs' is assigned to but never used:</p>
+               
+               <a href="controlers.kontroler.source.html#l206">
+                  <tt><i>206</i>         <span class="n">lstjoueurs</span> <span class="o">=</span> <span class="n">Ihm</span><span class="o">.</span><span class="n">saisir_joueur</span><span class="p">()</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  56
+               </span>
+               <strong>E501:</strong> line too long (89 > 79 characters)
+               
+                  (and 26 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (89 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l40">
+                  <tt><i>40</i> <span class="c1"># logging.basicConfig(filename=&#39;logs/journal.log&#39;, encoding=&#39;utf-8&#39;, level=logging.DEBUG)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (96 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l105">
+                  <tt><i>105</i>             <span class="n">clef</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nom du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;lieu du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;date du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre de tour&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (114 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l106">
+                  <tt><i>106</i>                     <span class="s2">&quot;contrôle de temps&quot;</span><span class="p">,</span> <span class="s2">&quot;id des joueurs&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre de participants&quot;</span><span class="p">,</span> <span class="s2">&quot;la description du tournois&quot;</span><span class="p">]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l113">
+                  <tt><i>113</i>             <span class="n">clef</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nom du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Prénom du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Âge du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Sexe du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Classement du joueur&quot;</span><span class="p">]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (88 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l119">
+                  <tt><i>119</i>             <span class="c1"># clef = [&quot;ID TOURNOIS EN COURS&quot;, &quot;ID TOUR&quot;, &quot;NOMBRE DE TOUR&quot;, &quot;numMatches&quot;]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (118 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l120">
+                  <tt><i>120</i>             <span class="n">clef</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ID TOURNOIS EN COURS&quot;</span><span class="p">,</span> <span class="s2">&quot;LISTPARTICIPANT&quot;</span><span class="p">,</span> <span class="s2">&quot;RESULTAT MATCH J1&quot;</span><span class="p">,</span> <span class="s2">&quot;RESULTAT MATCH J2&quot;</span><span class="p">,</span> <span class="s2">&quot;ID JOUEUR1&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (112 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l127">
+                  <tt><i>127</i>         <span class="n">clefj</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nom du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Prénom du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Âge du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Sexe du joueur&quot;</span><span class="p">,</span> <span class="s2">&quot;Classement du joueur&quot;</span><span class="p">]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l129">
+                  <tt><i>129</i>         <span class="n">cleft</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;nom du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;lieu du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;date du tournois&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre de tour&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l130">
+                  <tt><i>130</i>                  <span class="s2">&quot;contrôle de temps&quot;</span><span class="p">,</span> <span class="s2">&quot;nombre de participants&quot;</span><span class="p">,</span> <span class="s2">&quot;la description du tournois&quot;</span><span class="p">]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l132">
+                  <tt><i>132</i>         <span class="n">clefm</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ID TOURNOIS EN COURS&quot;</span><span class="p">,</span> <span class="s2">&quot;LISTPARTICIPANT&quot;</span><span class="p">,</span> <span class="s2">&quot;RESULTAT MATCH J1&quot;</span><span class="p">,</span> <span class="s2">&quot;RESULTAT MATCH J2&quot;</span><span class="p">,</span> <span class="s2">&quot;ID JOUEUR1&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (96 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l265">
+                  <tt><i>265</i>     <span class="c1"># Controlertournoi.saisir_match(str_jrs, round_tour, &quot;31e57338-4946-11ed-9d14-acde48001122&quot;)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (104 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l319">
+                  <tt><i>319</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">joueurs_table</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Classement du joueur&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (99 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l321">
+                  <tt><i>321</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">joueurs_table</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (105 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l324">
+                  <tt><i>324</i>             <span class="n">clssmnt</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">joueurs_table</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (101 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l475">
+                  <tt><i>475</i>             <span class="n">Controlertournoi</span><span class="o">.</span><span class="n">saisir_match</span><span class="p">(</span><span class="n">elms</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">elms</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">elms</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">boucle</span><span class="o">=</span><span class="n">nbrmanquant</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;i&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (113 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l511">
+                  <tt><i>511</i>             <span class="nb">globals</span><span class="p">()[</span><span class="s1">&#39;resultat</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;saisir le résultat du match</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2"> pour le joueur N°1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l520">
+                  <tt><i>520</i>                 <span class="n">resultat</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l522">
+                  <tt><i>522</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le RESULTAT VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">resultat</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l523">
+                  <tt><i>523</i>                 <span class="n">bddscore</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultat</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l524">
+                  <tt><i>524</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le BDDSCORE VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">bddscore</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (115 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l525">
+                  <tt><i>525</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscore</span> <span class="o">+</span> <span class="mi">1</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (113 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l531">
+                  <tt><i>531</i>                 <span class="c1"># match_table.insert(&quot;G&quot;, &quot;P&quot;,t1[i][0], t1[i][1],id_tour,IDTOURNOISENCOURS,[&#39;id du match&#39;]=tr_id)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l533">
+                  <tt><i>533</i>                     <span class="n">match_table</span><span class="o">.</span><span class="n">insert</span><span class="p">({</span><span class="s1">&#39;id du match&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()),</span> <span class="s1">&#39;resultat du match Joueur 1&#39;</span><span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l535">
+                  <tt><i>535</i>                                         <span class="s1">&#39;id du joueur1&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;id du joueur2&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (98 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l539">
+                  <tt><i>539</i>                     <span class="n">Tournoi</span><span class="o">.</span><span class="n">creermatch</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">tr_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (101 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l540">
+                  <tt><i>540</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;====================================ICI=====================================&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l541">
+                  <tt><i>541</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1 au joueur1 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (92 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l551">
+                  <tt><i>551</i>                 <span class="n">resultatp</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l553">
+                  <tt><i>553</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le RESULTAT VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">resultatp</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l554">
+                  <tt><i>554</i>                 <span class="n">bddscorep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatp</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatp</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatp</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l555">
+                  <tt><i>555</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le BDDSCORE VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">bddscorep</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (116 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l556">
+                  <tt><i>556</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscorep</span> <span class="o">+</span> <span class="mi">1</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l562">
+                  <tt><i>562</i>                     <span class="n">match_table</span><span class="o">.</span><span class="n">insert</span><span class="p">({</span><span class="s1">&#39;id du match&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()),</span> <span class="s1">&#39;resultat du match Joueur 1&#39;</span><span class="p">:</span> <span class="s2">&quot;P&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l564">
+                  <tt><i>564</i>                                         <span class="s1">&#39;id du joueur1&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;id du joueur2&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (98 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l568">
+                  <tt><i>568</i>                     <span class="n">Tournoi</span><span class="o">.</span><span class="n">creermatch</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">tr_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l569">
+                  <tt><i>569</i>                     <span class="c1"># Tournoi.creermatch(&quot;G&quot;, &quot;P&quot;, t1[i][0], t1[i][1], tr_id[-1], IDTOURNOISENCOURS)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l570">
+                  <tt><i>570</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1 au joueur2 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (92 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l579">
+                  <tt><i>579</i>                 <span class="n">resultatn</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l581">
+                  <tt><i>581</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le RESULTAT VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">resultatn</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (91 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l582">
+                  <tt><i>582</i>                 <span class="n">bddscoren</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatn</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (81 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l583">
+                  <tt><i>583</i>                 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Le BDDSCORE VAUT FCT SAISIR MATCH:&#39;</span><span class="p">,</span> <span class="n">bddscoren</span><span class="p">,</span> <span class="s1">&#39;&lt;==&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (118 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l584">
+                  <tt><i>584</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscoren</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l585">
+                  <tt><i>585</i>                 <span class="n">resultatnn</span> <span class="o">=</span> <span class="n">joueurs_table</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (95 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l587">
+                  <tt><i>587</i>                 <span class="n">bddscorenn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resultatnn</span><span class="p">))</span> <span class="o">-</span> <span class="mi">2</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (119 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l588">
+                  <tt><i>588</i>                 <span class="n">joueurs_table</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Score du joueur&#39;</span><span class="p">:</span> <span class="n">bddscorenn</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">},</span> <span class="n">where</span><span class="p">(</span><span class="s1">&#39;Identifiant du joueur&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (85 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l589">
+                  <tt><i>589</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1/2 au joueur2 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (85 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l590">
+                  <tt><i>590</i>                 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ajouter+1/2 au joueur1 dans la bdd pour le matcht N°</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (108 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l596">
+                  <tt><i>596</i>                     <span class="n">match_table</span><span class="o">.</span><span class="n">insert</span><span class="p">({</span><span class="s1">&#39;id du match&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">()),</span> <span class="s1">&#39;resultat du match Joueur 1&#39;</span><span class="p">:</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l598">
+                  <tt><i>598</i>                                         <span class="s1">&#39;id du joueur1&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;id du joueur2&#39;</span><span class="p">:</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (98 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l602">
+                  <tt><i>602</i>                     <span class="n">Tournoi</span><span class="o">.</span><span class="n">creermatch</span><span class="p">(</span><span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="s2">&quot;N&quot;</span><span class="p">,</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">tr_id</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (100 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l603">
+                  <tt><i>603</i>                     <span class="c1"># Tournoi.creermatch(&quot;P&quot;, &quot;G&quot;, t1[i][0], t1[i][1], tr_id[-1], IDTOURNOISENCOURS)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (88 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l709">
+                  <tt><i>709</i>             <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;========vous avez choisi le rapport des joueurs par score========</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (88 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l720">
+                  <tt><i>720</i>             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;========vous avez choisi Rapport des matchs d&#39;un tournois========</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (83 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l772">
+                  <tt><i>772</i>     <span class="c1"># print(&quot;liste des tournois: &quot;, Controlertournoi.lstidtournois(tournois_table))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (103 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l774">
+                  <tt><i>774</i>     <span class="c1"># print(&#39;Nombre de tour égal:&#39;,Controlertournoi.compt_tour(&quot;f4540b56-56e2-11ed-8d4c-acde48001122&quot;))</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (101 > 79 characters):</p>
+               
+               <a href="controlers.kontroler.source.html#l775">
+                  <tt><i>775</i>     <span class="c1"># print(&#39;nombre de tour egale:&#39;,Controlertournoi.id_tour(&quot;f4540b56-56e2-11ed-8d4c-acde48001122&quot;))</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="N803">
+               <span class="count sev-3">
+                  6
+               </span>
+               <strong>N803:</strong> argument name 'ID_TOURNOI_COUR' should be lowercase
+               
+                  (and 2 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Argument name 'ID_TOURNOI_COUR' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l227">
+                  <tt><i>227</i>     <span class="k">def</span> <span class="nf">id_tourprendre</span><span class="p">(</span><span class="n">ID_TOURNOI_COUR</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Argument name 'ID_TOURNOI_COUR' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l237">
+                  <tt><i>237</i>     <span class="k">def</span> <span class="nf">id_tourreprise</span><span class="p">(</span><span class="n">ID_TOURNOI_COUR</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Argument name 'ID_TOURNOI_COUR' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l247">
+                  <tt><i>247</i>     <span class="k">def</span> <span class="nf">id_tour_lstjoueurs</span><span class="p">(</span><span class="n">ID_TOURNOI_COUR</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Argument name 'ID_TOURNOI_COUR' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l391">
+                  <tt><i>391</i>     <span class="k">def</span> <span class="nf">id_tour</span><span class="p">(</span><span class="n">ID_TOURNOI_COUR</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Argument name 'ID_TOURNOI_COURS' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l478">
+                  <tt><i>478</i>     <span class="k">def</span> <span class="nf">compt_tour</span><span class="p">(</span><span class="n">ID_TOURNOI_COURS</span><span class="p">):</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Argument name 'IDTOURNOISENCOURS' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l504">
+                  <tt><i>504</i>     <span class="k">def</span> <span class="nf">saisir_match</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">tr_id</span><span class="p">,</span> <span class="n">IDTOURNOISENCOURS</span><span class="p">,</span> <span class="n">boucle</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="N806">
+               <span class="count sev-3">
+                  5
+               </span>
+               <strong>N806:</strong> variable 'dicoEntb' in function should be lowercase
+               
+                  (and 4 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Variable 'dicoEntb' in function should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l136">
+                  <tt><i>136</i>         <span class="n">dicoEntb</span> <span class="o">=</span> <span class="p">[]</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'saisieT' in function should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l192">
+                  <tt><i>192</i>                     <span class="n">saisieT</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;saisir : &quot;</span> <span class="o">+</span> <span class="n">cleft</span><span class="p">[</span><span class="n">j</span><span class="p">])</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'ID_TOURNOI_ENCOURS' in function should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l199">
+                  <tt><i>199</i>                 <span class="n">ID_TOURNOI_ENCOURS</span> <span class="o">=</span> <span class="n">dico</span><span class="o">.</span><span class="n">values</span><span class="p">()</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'nbrTour' in function should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l243">
+                  <tt><i>243</i>         <span class="n">nbrTour</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tour_ids</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'lstIdToutnois' in function should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l617">
+                  <tt><i>617</i>         <span class="n">lstIdToutnois</span> <span class="o">=</span> <span class="n">Controlertournoi</span><span class="o">.</span><span class="n">lstidtournois</span><span class="p">(</span><span class="n">tournois_table</span><span class="p">)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="N816">
+               <span class="count sev-3">
+                  4
+               </span>
+               <strong>N816:</strong> variable 'lstIdParticipant' in global scope should not be mixedCase
+               
+                  (and 3 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Variable 'lstIdParticipant' in global scope should not be mixedCase:</p>
+               
+               <a href="controlers.kontroler.source.html#l42">
+                  <tt><i>42</i> <span class="n">lstIdParticipant</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'id_Tour_transmettre' in global scope should not be mixedCase:</p>
+               
+               <a href="controlers.kontroler.source.html#l43">
+                  <tt><i>43</i> <span class="n">id_Tour_transmettre</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'sauvTour' in global scope should not be mixedCase:</p>
+               
+               <a href="controlers.kontroler.source.html#l44">
+                  <tt><i>44</i> <span class="n">sauvTour</span> <span class="o">=</span> <span class="s2">&quot;blackout.json&quot;</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Variable 'infoSaisie' in global scope should not be mixedCase:</p>
+               
+               <a href="controlers.kontroler.source.html#l47">
+                  <tt><i>47</i> <span class="n">infoSaisie</span> <span class="o">=</span> <span class="p">[]</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="N802">
+               <span class="count sev-3">
+                  2
+               </span>
+               <strong>N802:</strong> function name 'selectionJoueurs' should be lowercase
+               
+                  (and 1 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Function name 'selectionJoueurs' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l204">
+                  <tt><i>204</i>     <span class="k">def</span> <span class="nf">selectionJoueurs</span><span class="p">():</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Function name 'donnerLstMatchs' should be lowercase:</p>
+               
+               <a href="controlers.kontroler.source.html#l401">
+                  <tt><i>401</i>     <span class="k">def</span> <span class="nf">donnerLstMatchs</span><span class="p">():</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="D401">
+               <span class="count sev-3">
+                  1
+               </span>
+               <strong>D401:</strong> First line should be in imperative mood
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="controlers.kontroler.source.html#l402">
+                  <tt><i>402</i>         <span class="sd">&quot;&quot;&quot;Liste des matchs dans la table tour.&quot;&quot;&quot;</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>
